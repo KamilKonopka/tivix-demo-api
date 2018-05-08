@@ -1,1 +1,10 @@
-/* You can add global styles to this file, and also import other style files */
+@import 'styles/variables.scss';
+
+.container-fluid {
+  max-width: $page-max-width;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: stretch;
+}

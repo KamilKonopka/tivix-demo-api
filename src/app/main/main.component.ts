@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { JsonPlaceholderService } from '../services/json-placeholder.service';
 
 @Component({
   selector: 'app-main',
@@ -7,9 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MainComponent implements OnInit {
 
-  constructor() { }
-
+  jsonPosts;
+  constructor(private jsonPlaceholderService: JsonPlaceholderService) { }
+  getPosts() {
+    this.jsonPlaceholderService.getPosts().subscribe(posts => {
+      this.jsonPosts = posts;
+    });
+  }
   ngOnInit() {
+    this.getPosts();
   }
 
 }

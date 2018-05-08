@@ -6,6 +6,8 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { MainComponent } from './main/main.component';
+import { JsonPlaceholderService } from './services/json-placeholder.service';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -16,9 +18,10 @@ import { MainComponent } from './main/main.component';
     MainComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [JsonPlaceholderService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
