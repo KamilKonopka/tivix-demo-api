@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { Post } from '../post';
 
 @Component({
   selector: 'app-card',
@@ -8,7 +9,7 @@ import { Component, OnInit, Input } from '@angular/core';
 export class CardComponent implements OnInit {
 
   // tslint:disable-next-line:no-input-rename
-  @Input('post') post: any;
+  @Input('post') post: Post;
   constructor() { }
 
   ngOnInit() {
