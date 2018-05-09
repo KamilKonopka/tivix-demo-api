@@ -9,6 +9,7 @@ import { MainComponent } from './main/main.component';
 import { JsonPlaceholderService } from './services/json-placeholder.service';
 import { HttpClientModule } from '@angular/common/http';
 import { NavbarComponent } from './navbar/navbar.component';
+import { CardComponent } from './card/card.component';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { NavbarComponent } from './navbar/navbar.component';
     HeaderComponent,
     FooterComponent,
     MainComponent,
-    NavbarComponent
+    NavbarComponent,
+    CardComponent
   ],
   imports: [
     BrowserModule,
