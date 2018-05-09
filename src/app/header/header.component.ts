@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { JsonPlaceholderService } from '../services/json-placeholder.service';
+import { Post } from '../post';
 
 @Component({
   selector: 'app-header',
@@ -7,9 +9,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor() { }
+  slide: Post;
+
+  constructor(private jsonPlaceholderService: JsonPlaceholderService) { }
+
+  getPost() {
+    this.jsonPlaceholderService.getPost(1).subscribe(post => {
+      this.slide = post;
+    });
+  }
 
   ngOnInit() {
+    this.getPost();
   }
 
 }

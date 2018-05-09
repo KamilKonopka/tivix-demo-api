@@ -6,17 +6,8 @@ import { JsonPlaceholderService } from '../services/json-placeholder.service';
   templateUrl: './main.component.html',
   styleUrls: ['./main.component.scss']
 })
-export class MainComponent implements OnInit {
+export class MainComponent {
 
-  jsonPosts;
-  constructor(private jsonPlaceholderService: JsonPlaceholderService) { }
-  getPosts() {
-    this.jsonPlaceholderService.getPosts().subscribe(posts => {
-      this.jsonPosts = posts;
-    });
-  }
-  ngOnInit() {
-    this.getPosts();
-  }
+
 
 }
