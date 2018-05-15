@@ -1,4 +1,10 @@
 <div class="container-fluid">
+    <form (ngSubmit)="getPostByUser(userId)" #userId="ngForm">
+      <div class="alert-danger" *ngIf="UserId.invalid && UserId.touched">This field is required!</div>
+        <label for="UserId">Specify User Id</label>
+        <input type="number" name="UserId" [(ngModel)]="form.UserId" id="UserId" required #UserId="ngModel">
+        <button class="btn btn-primary" type="submit" [disabled]="!userId.valid">Search for Posts</button>
+    </form>
   <div *ngFor="let post of jsonPostsByUser">
     <div class="card">
       <div class="card-header">

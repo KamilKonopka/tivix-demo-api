@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { JsonPlaceholderService } from '../services/json-placeholder.service';
-import { Post } from '../post';
+import { Post } from '../interfaces/post';
 
 @Component({
   selector: 'app-header',

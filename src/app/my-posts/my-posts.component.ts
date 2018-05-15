@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { JsonPlaceholderService } from '../services/json-placeholder.service';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-my-posts',
@@ -8,20 +9,27 @@ import { JsonPlaceholderService } from '../services/json-placeholder.service';
 })
 export class MyPostsComponent implements OnInit {
 
+  @ViewChild('userId')
+  userId: NgForm;
+
   jsonPostsByUser;
+  form = new FormData();
+
 
   constructor(private jsonPlaceholderService: JsonPlaceholderService) { }
 
   getPostByUser() {
-    this.jsonPlaceholderService.getPostByUser(1).subscribe(posts => {
+    this.jsonPlaceholderService.getPostByUser(this.form.UserId).subscribe(posts => {
       this.jsonPostsByUser = posts;
-      console.log(posts);
+      this.userId.reset();
     });
   }
 
-
   ngOnInit() {
-    this.getPostByUser();
   }
 
+
+}
+class FormData {
+  constructor(public UserId?: number) {}
 }

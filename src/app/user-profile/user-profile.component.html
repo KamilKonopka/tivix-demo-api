@@ -1,0 +1,45 @@
+<div class="container-fluid">
+  <div class="card mb-3">
+    <img class="card-img-top" src="http://via.placeholder.com/1149x180" alt="Card image cap">
+    <div class="card-body">
+      <h2 class="card-title">{{ User.name }}</h2>
+      <div class="row">
+        <div class="col-lg-4 rounded-left">
+          <img class="" src="http://via.placeholder.com/300x300">
+        </div>
+        <div class="col-lg-8">
+          <div class="row">
+            <div class="col-lg-2">Address: </div>
+            <div class="col-lg-10">{{ User.address.street }} {{ User.address.suite }}
+              <br/> {{ User.address.zipcode }} {{ User.address.city }}
+              <br/> {{ User.address.geo.lat }}
+              <br>{{User.address.geo.lng}}
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-lg-2">Mobile:</div>
+            <div class="col-lg-10">{{ User.phone }}</div>
+          </div>
+          <div class="row">
+            <div class="col-lg-2">Nickname:</div>
+            <div class="col-lg-10">{{ User.username }}</div>
+          </div>
+          <div class="row">
+            <div class="col-lg-2">Website:</div>
+            <div class="col-lg-10">
+              <a href="{{User.website}}">{{ User.website }}</a>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-lg-2">Company:</div>
+            <div class="col-lg-10">
+              {{ User.company.name }}
+              <br/>{{User.company.catchPhrase}}
+              <br/>{{User.company.bs}}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
