@@ -11,7 +11,7 @@ export class JsonPlaceholderService {
 
   constructor(private http: HttpClient) { }
   getPosts(): Observable<Array<Post>> {
-    return this.http.get<Array<Post>>(jsonUrl);
+    return this.http.get<Array<Post>>(jsonUrl + 'posts');
   }
 
   getPost(id: number): Observable<Post> {
