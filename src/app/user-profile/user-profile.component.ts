@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { JsonPlaceholderService } from '../services/json-placeholder.service';
 import { User } from '../interfaces/users';
 
@@ -8,8 +8,10 @@ import { User } from '../interfaces/users';
   styleUrls: ['./user-profile.component.scss']
 })
 export class UserProfileComponent implements OnInit {
-  User: User;
+
+  @Input() User;
   id = 9;
+  deleteUser = false;
 
   constructor(private jsonPlaceholderService: JsonPlaceholderService) { }
 
@@ -22,6 +24,9 @@ export class UserProfileComponent implements OnInit {
       this.User = user;
     });
 
+  }
+  deleteProfile() {
+  this.deleteUser = true;
   }
 
 }
