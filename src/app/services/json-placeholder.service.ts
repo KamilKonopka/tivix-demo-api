@@ -20,7 +20,7 @@ export class JsonPlaceholderService {
 
   getPostByUser(userId: number): Observable<Array<Post>> {
     const param = new HttpParams().set('userId', userId + '');
-    return this.http.get<Array<Post>>(jsonUrl, {params: param});
+    return this.http.get<Array<Post>>(jsonUrl + 'posts/', {params: param});
   }
 
   getUser(id: number): Observable<User> {
