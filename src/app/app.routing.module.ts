@@ -12,7 +12,7 @@ const appRoutes: Routes = [
     component: MainComponent
   },
   {
-    path: 'all-posts',
+    path: 'dashboard',
     component: AllPostsComponent
   },
   {
